@@ -1,0 +1,5 @@
+JavaTest - aplikacja w C# do obs³ugo programu do kompresji w Java
+
+Obrazy - folder z przyk³adowymi obrazami do obróbki
+
+theory.pdf - teoria

@@ -1,0 +1,9 @@
+D:\ProjektyVisualStudio\JavaTest\JavaTest\bin\Debug\JavaTest.exe.config
+D:\ProjektyVisualStudio\JavaTest\JavaTest\bin\Debug\JavaTest.exe
+D:\ProjektyVisualStudio\JavaTest\JavaTest\bin\Debug\JavaTest.pdb
+D:\ProjektyVisualStudio\JavaTest\JavaTest\obj\Debug\JavaTest.csprojResolveAssemblyReference.cache
+D:\ProjektyVisualStudio\JavaTest\JavaTest\obj\Debug\JavaTest.Form1.resources
+D:\ProjektyVisualStudio\JavaTest\JavaTest\obj\Debug\JavaTest.Properties.Resources.resources
+D:\ProjektyVisualStudio\JavaTest\JavaTest\obj\Debug\JavaTest.csproj.GenerateResource.Cache
+D:\ProjektyVisualStudio\JavaTest\JavaTest\obj\Debug\JavaTest.exe
+D:\ProjektyVisualStudio\JavaTest\JavaTest\obj\Debug\JavaTest.pdb
