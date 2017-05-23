@@ -6,7 +6,7 @@ Kod kompresujący i dekompresujący został zaimplementowany w Javie, natomiast 
 ## Teoria oraz wyniki kompresji
 Cała teroria odnośnie kompresji zdjęć i dekompresji została zapisana w pliku theory.pdf. 
 
-Do zapisu danych do pliku zostało wykorzystane kodowanie huffmna oraz notacja w której najpierw podajemy liczbę jaka jest zapisana a następnie jej krotność.
+Do zapisu danych do pliku zostało wykorzystane kodowanie huffmna [z wykorzystaniem biblioteki](https://www.nayuki.io/page/reference-huffman-coding) oraz notacja w której najpierw podajemy liczbę jaka jest zapisana a następnie jej krotność.
 Wyjście to wydawaćby się mogło nieoptymalne, lecz w zapisywanych danych mamy doczynienia z bardzo długimi ciągami zer, przez co notacja ta ma bardzo praktyczne zastosowanie.
 
 ## Rozmieszczenie kodu
