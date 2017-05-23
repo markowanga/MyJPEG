@@ -107,7 +107,7 @@ public final class CodeTree {
             throw new AssertionError("Illegal node type");
         }
     }
-	
+
 	
 	
 	/* Various methods */

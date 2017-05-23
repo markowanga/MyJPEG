@@ -6,10 +6,10 @@ public class ProgramJPEG {
     /**
      * Pierwszy arg: 1 - kompresja, 2 - dekompresja, 3 - kompresja i dekompresja
      * Pozostałe parametry:
-     *      kompresja: [nazwa pliku wejsciowego][nazwa pliku do zapisu skompresowanego obrazu][kod kompresji]
-     *      dekompresja: [nazwa pliku skompresowanego][nazwa pliku do zapisu]
-     *      to i to: [nazwa pliku wejsciowego][nazwa pliku do zapisu skompresowanego obrazu]
-     *                  [nazwa pliku po dekompresji][kod kompresji]
+     * kompresja: [nazwa pliku wejsciowego][nazwa pliku do zapisu skompresowanego obrazu][kod kompresji]
+     * dekompresja: [nazwa pliku skompresowanego][nazwa pliku do zapisu]
+     * to i to: [nazwa pliku wejsciowego][nazwa pliku do zapisu skompresowanego obrazu]
+     * [nazwa pliku po dekompresji][kod kompresji]
      */
     public static void main(String args[]) {
         int valToDo = Integer.parseInt(args[0]);

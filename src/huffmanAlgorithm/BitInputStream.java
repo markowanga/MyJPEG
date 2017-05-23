@@ -49,7 +49,7 @@ public final class BitInputStream {
         currentByte = 0;
         numBitsRemaining = 0;
     }
-	
+
 	
 	
 	/* Methods */

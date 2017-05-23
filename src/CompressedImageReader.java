@@ -54,7 +54,7 @@ public class CompressedImageReader {
      * Fill zigzak tables with values
      *
      * @param stream - stream with values to fill
-     * @param table - zigzak table to fill
+     * @param table  - zigzak table to fill
      * @throws IOException
      */
     private void fillReturnTable(ValuesStream stream, int[][][] table) throws IOException {
@@ -72,7 +72,8 @@ public class CompressedImageReader {
 
     /**
      * Read the hufman code of values
-     * @param in - stream to read data
+     *
+     * @param in        - stream to read data
      * @param keysCount - count of keys to read
      * @return - object with huffman code
      * @throws IOException
@@ -94,7 +95,7 @@ public class CompressedImageReader {
      * Class to read the coded data (by huffman algorithm)
      * The words have different lenght and was moved (by substract const)
      * Additionaly was compressed to format [zeros count][non zeros count][non zero values...]
-     *
+     * <p>
      * Outside this class we should use only constructor and getNextValue()
      */
     private class ValuesStream {
@@ -108,9 +109,10 @@ public class CompressedImageReader {
 
         /**
          * Constructor
-         * @param in - inputstream
+         *
+         * @param in       - inputstream
          * @param codeTree - is used to decode the data
-         * @param EOFCode - ending stream code
+         * @param EOFCode  - ending stream code
          * @param minValue - data is shifted about this parameter
          * @throws IOException
          */
@@ -125,6 +127,7 @@ public class CompressedImageReader {
 
         /**
          * reads new block of data
+         *
          * @throws IOException
          */
         private void readNewBlock() throws IOException {
@@ -140,6 +143,7 @@ public class CompressedImageReader {
 
         /**
          * Return the next value to zigzak tables
+         *
          * @return - value to table
          * @throws IOException
          */
@@ -167,6 +171,7 @@ public class CompressedImageReader {
 
         /**
          * Read the data from file, but it is still compressed in blocks
+         *
          * @return - value compressed in blocks
          * @throws IOException
          */

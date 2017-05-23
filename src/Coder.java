@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Created by Daniel on 2016-12-30.
- *
+ * <p>
  * Class to code the image
  * Class needs only a name of image, and name of file to save compressed
  */
@@ -29,11 +29,11 @@ public class Coder {
 
     /**
      * Part the image for blocks and save it for blocks
+     * if the image have the size not dividable by 8 the remainder will be cutted
+     *
      * @throws Exception - when the image is not initialized
      */
     private static List<Blok> splitIntoBlocks(BufferedImage bufferedImage) throws Exception {
-        // TODO: 01.01.2017 Błędne granice i nie zadbano o to jak krawędzie nie są podzielne przez 8 -- na pierwszy rzut oka
-
         List<Blok> blocks = new ArrayList<>();
         int blockSize = 8;
         int xMult = bufferedImage.getWidth() / 8;
@@ -50,13 +50,13 @@ public class Coder {
     /**
      * This function match better in coder, but it is here, because we use it to test where
      * we only encode and decode without saving data in file
-     * @param base - image where we want to put the block
+     *
+     * @param base     - image where we want to put the block
      * @param toInsert - image of block which we want insert
-     * @param fromX - x index to start insert block
-     * @param fromY - y index to start insert block
+     * @param fromX    - x index to start insert block
+     * @param fromY    - y index to start insert block
      */
     public static void insertImage(BufferedImage base, BufferedImage toInsert, int fromX, int fromY) {
-        // TODO: 01.01.2017 Zastosować ewentualne poprawki ze splitIntoBlocks jak zostanie zmieniona
         int xLimit = toInsert.getWidth() + fromX;
         int yLimit = toInsert.getHeight() + fromY;
 
@@ -67,15 +67,16 @@ public class Coder {
 
     /**
      * This function save uncompressed image into compressed file
-     * @param sourceFile - file with source image
+     *
+     * @param sourceFile     - file with source image
      * @param fileNameToSave - file to compress image
      */
     public static void saveCompressedImage(String sourceFile, String fileNameToSave, int quantizationCode) {
         int[][][] tablesToSave;
 
         // check that fileNameToSave has good fileExtension
-        if (fileNameToSave.substring(fileNameToSave.length()-fileExtension.length(),
-                fileNameToSave.length()-1).equals(fileExtension)) {
+        if (fileNameToSave.substring(fileNameToSave.length() - fileExtension.length(),
+                fileNameToSave.length() - 1).equals(fileExtension)) {
             System.out.print("File: " + fileNameToSave + " has bad extension. SAVE ABROTED");
             return;
         }
@@ -89,7 +90,7 @@ public class Coder {
             int[][] quantizationCh = QuantizationTable.getQuantizationTableForCh(quantizationCode);
 
             for (int i = 0; i < blocks.size(); i++) {
-                if (i%10000==0) System.out.println(i + " / " + blocks.size());
+                if (i % 10000 == 0) System.out.println(i + " / " + blocks.size());
                 tablesToSave[i] = blocks.get(i).encode(quantizationY, quantizationCh);
             }
 

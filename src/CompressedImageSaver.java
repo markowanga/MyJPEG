@@ -30,10 +30,10 @@ public class CompressedImageSaver {
     /**
      * This function can save compressed image into file
      *
-     * @param fileName - file name in which we save
-     * @param height - height of picture
-     * @param width - width of picture
-     * @param zigzakTable - the table of zigzaks
+     * @param fileName         - file name in which we save
+     * @param height           - height of picture
+     * @param width            - width of picture
+     * @param zigzakTable      - the table of zigzaks
      * @param quantizationCode - quantizationCode to save
      */
     public void saveImage(String fileName, int height, int width, int[][][] zigzakTable, int quantizationCode) {
@@ -51,6 +51,9 @@ public class CompressedImageSaver {
         while (preliminaryFrequency[minVal] == 0) minVal++;
         while (preliminaryFrequency[maxVal] == 0) maxVal--;
         preliminaryFrequency[maxVal + 1]++; // add EOF
+
+        for (int a = minVal; a <= maxVal; a++)
+            System.out.println((a - valuesShift) + " -> " + preliminaryFrequency[a]);
 
         FrequencyTable frequencyTable = new FrequencyTable(Arrays.copyOfRange(preliminaryFrequency, minVal, maxVal + 2));
         minVal -= valuesShift;
@@ -85,6 +88,7 @@ public class CompressedImageSaver {
      * Prepate the table of frequency of data (how many times the value is in stream)
      * We shift the value because there is no negative index, and the minimal value in stream equals -4080 and max 4080
      * (we do not count EOF - the maxValue + 1 of the stream)
+     *
      * @param valuesStream - stream with values
      * @return - int[] table with frequency
      * @throws IOException
@@ -104,7 +108,7 @@ public class CompressedImageSaver {
     /**
      * Save in file the dictionary of huffman code
      *
-     * @param out - stream to save
+     * @param out       - stream to save
      * @param canonCode - object with dictionary
      * @throws IOException
      */
@@ -120,12 +124,12 @@ public class CompressedImageSaver {
     /**
      * Save in file compressed data from stream using huffman algorithm
      *
-     * @param code - Huffman dictionary
-     * @param valuesStream - stream with values
-     * @param out - stream to write values
+     * @param code          - Huffman dictionary
+     * @param valuesStream  - stream with values
+     * @param out           - stream to write values
      * @param codeTreeShift - the value to move values (we can't save negative values
      *                      using this implementation of Huffman algorithm)
-     * @param EOFValue - this value mean End Of File - it is very important while reading data
+     * @param EOFValue      - this value mean End Of File - it is very important while reading data
      * @throws IOException
      */
     static void compress(CodeTree code, ValuesStream valuesStream, BitOutputStream out, int codeTreeShift, int EOFValue) throws IOException {
@@ -160,6 +164,7 @@ public class CompressedImageSaver {
 
         /**
          * Condtructor
+         *
          * @param ToStream - zigzak tables to stream
          */
         ValuesStream(int[][][] ToStream) {

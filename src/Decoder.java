@@ -32,7 +32,7 @@ public class Decoder {
 
         for (int i = 0, n = 0; i < xMult; i++)
             for (int j = 0; j < yMult; j++, n++) {
-                if (n%10000 == 0)
+                if (n % 10000 == 0)
                     System.out.println(n + " / " + sourceTable.length);
                 Coder.insertImage(toSave, new Blok(sourceTable[n], quantizationY, quantizationCh).toBufferedImage(),
                         i * Blok.blockSize, Blok.blockSize * j);
